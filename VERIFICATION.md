@@ -43,11 +43,10 @@ were not available in this environment.
 - Personal Discord profile: the owner supplied
   `https://discord.com/users/237471776957792257`; no user ID was guessed.
   The URL returns HTTP 200; Discord may require sign-in to display the profile.
-- Email link is exactly `mailto:mjfsch@hotmail.com`; no email was sent.
 - YouTube returns HTTP 200 with title `mjfsch - YouTube` and canonical handle
   `/@mjfsch`. TikTok returns HTTP 200 with `uniqueId: mjfsch`, `nickname: mjfsch`
   and a successful (`0`) profile status code in its page data.
-- Email, YouTube and TikTok appear below the community invite. Social links share
+- YouTube and TikTok appear below the community invite. Social links share
   one row to keep the page compact. The copy button is a small secondary control
   with a 44px tap target; the direct Discord profile is the primary contact link.
 - The livestream/event section was removed at the owner's request, including
@@ -70,3 +69,9 @@ were not available in this environment.
   with a white background. Quiet margins and background opacity were asserted.
 - Physical garment scanning still requires a proof; software cannot verify ink,
   fabric, sleeve curvature or the actual printed garment. See `qr/PRINTING.md`.
+
+## Subsequent content update
+
+- 12 October 2026: the email contact link was removed from the published page,
+  and the volunteer wording was made friendlier. The earlier browser test results
+  above describe the previous revision; they were not rerun for this text-only update.
