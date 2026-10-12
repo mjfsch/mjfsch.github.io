@@ -49,6 +49,7 @@ h2, .link-title { margin: 0; font-size: .9375rem; font-weight: 650; line-height:
 .copy-status:not(:empty) { margin: -4px 0 10px; }
 .link-panel { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 82px; }
 .community { background: #202a27; border-color: #527063; }
+.quadro { background: #26221f; border-color: #705447; }
 .link-panel .link-title { flex: 1; min-width: 0; }
 .arrow { color: var(--mint); font-size: 1.5rem; }
 .more-links { margin: 12px 0 8px; }
@@ -62,6 +63,7 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; gap: 6px
 footer a .brand-icon { width: 12px; height: 12px; flex-basis: 12px; }
 @media (hover: hover) {
   .community:hover { border-color: var(--mint); background: #27382f; }
+  .quadro:hover { border-color: var(--accent); background: #332923; }
   #copy-username:hover { background: #24312b; color: var(--text); }
   .profile-link:hover h2 { text-decoration: underline; text-underline-offset: 4px; }
   .more-links a:hover, footer a:hover { color: var(--text); }
