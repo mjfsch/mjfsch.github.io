@@ -7,12 +7,16 @@ page, never an invite, event link or tracking redirect.
 
 - `mjfsch-sleeve.svg`: preferred for printing; sharp at any size, supplied at
   **45 x 45 mm**, with an opaque white background and black square modules.
-- `mjfsch-sleeve.png`: high-resolution RGB PNG, the same code with an opaque white
+- `mjfsch-sleeve.png`: **2624 x 2624 px** RGB PNG, the same code with an opaque white
   background. Set its physical print size to **45 x 45 mm** (or larger) in the
   print layout; don't rely on the application's automatic DPI sizing.
 - Both files include a **four-module white quiet zone on every side**. Keep the
   entire white square; never crop the margins or remove the white background.
 - Error correction: **H**. No logo overlays, decorative shapes or rounded modules.
+
+This is a version-4 symbol: 33 x 33 modules, or 41 x 41 including the margins.
+At 45 mm overall, each module is about 1.10 mm and each quiet margin is 4.39 mm.
+At the 35 mm practical minimum, each module is about 0.85 mm.
 
 ## Size and contrast on a black T-shirt
 

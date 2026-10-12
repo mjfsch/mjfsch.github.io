@@ -45,6 +45,18 @@ were not available in this environment.
 
 ## Deployment and QR
 
-The deployment and decoded QR verification are recorded here after publication.
-The print guide includes a physical proof test because software decoding cannot
-verify ink, fabric, sleeve curvature or the printed garment.
+- Confirmed live URL: **https://mjfsch.github.io/**, HTTP 200 over HTTPS.
+  GitHub Pages reports `built`, no build error, source `main` at `/`, legacy
+  branch publishing and `https_enforced: true`. No custom workflow was added.
+- Live browser checks passed: content and all runtime assets match the local
+  source byte for byte, correct canonical URL, mobile layout, zero axe violations,
+  actual HTTPS clipboard read/write and successful community-link navigation to
+  `https://discord.com/invite/rPAMgVsdjP`. No cookies or third-party runtime requests.
+- Generated QR artwork only after the live URL had been confirmed. OpenCV's
+  independent decoder read the actual PNG and the actual SVG rasterized with
+  CairoSVG; both returned exactly `https://mjfsch.github.io/`.
+- QR version 4, error correction H, 33x33 symbol modules, four white modules on
+  all sides, 41x41 total grid. SVG physical size 45x45 mm; PNG 2624x2624 px, RGB
+  with a white background. Quiet margins and background opacity were asserted.
+- Physical garment scanning still requires a proof; software cannot verify ink,
+  fabric, sleeve curvature or the actual printed garment. See `qr/PRINTING.md`.
