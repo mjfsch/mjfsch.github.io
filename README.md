@@ -45,6 +45,15 @@ Use GitHub's file editor or edit locally and commit to `main`.
   The Kickstarter destination was taken from CoPrint's own homepage.
 - Colours, spacing and type: edit `style.css`. The favicon is an original abstract
   layer illustration, not an official brand logo.
+- Logos: `icons.svg` stores platform vectors with explicit brand colours. CSS
+  sets their sizes (16px for Discord, 14px for social links, 12px for GitHub).
+  Keep those fills intact instead of applying a shared `currentColor` override.
+  TikTok's colour geometry comes from
+  https://github.com/gilbarbara/logos/blob/main/logos/tiktok-icon.svg, using a white
+  centre on the dark background. The other platform paths come from Simple Icons.
+  `coprint-logo.webp` is CoPrint's original colour wordmark from its homepage,
+  displayed at 96px wide and hosted locally. Source:
+  https://coprint3d.com/cdn/shop/files/cologwebp.webp?v=1738592849
 
 ## Update after Formnext
 

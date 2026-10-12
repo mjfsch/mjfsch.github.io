@@ -75,3 +75,24 @@ were not available in this environment.
 - 12 October 2026: the email contact link was removed from the published page,
   and the volunteer wording was made friendlier. The earlier browser test results
   above describe the previous revision; they were not rerun for this text-only update.
+
+## Logo and text cleanup
+
+- Synced the owner's intervening changes before editing. Preserved the compact
+  copy control beside the username and the removal of the public email address.
+- Platform logos now have explicit colours in the local SVG sprite: Discord
+  blurple, YouTube red/white, TikTok cyan/pink/white and Kickstarter green.
+  GitHub uses its white mark on the dark background. Icon widths are 16px for
+  Discord, 14px for social links and 12px for GitHub.
+- Added CoPrint's original colour wordmark from its own homepage, stored locally
+  and displayed at 96px wide. Removed the decorative substitute from the links.
+- Removed the requested fellow-maker, volunteer and acknowledgement text, plus
+  the Discord profile/community subtitles.
+- Chromium checks passed at 280, 320, 390, 768 and 1440px: actual SVG rendering,
+  bounded logo sizes, loaded CoPrint image, no horizontal overflow, 44px-or-larger
+  interaction targets, and zero axe WCAG A/AA or best-practice violations.
+- Verified actual screenshot pixels for YouTube red and both TikTok accent
+  colours. Visually inspected mobile and desktop screenshots. Keyboard activation,
+  clipboard copying and 200% text enlargement also passed with no failed assets
+  or JavaScript errors.
+- All six runtime assets remain local and total about 28 KB uncompressed.
