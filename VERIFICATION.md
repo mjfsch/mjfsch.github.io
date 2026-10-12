@@ -24,7 +24,7 @@ Automated real Chromium checks with Playwright and axe-core 4.10.3:
   gives manual instructions. Content and links also work with JavaScript disabled.
 - Forced-colour mode and reduced-motion preference. No animation is shipped.
 - No JavaScript errors, third-party runtime requests or cookies. Four small
-  static assets (HTML, CSS, JS, favicon) total approximately 12 KB uncompressed.
+  static assets (HTML, CSS, JS, favicon) total approximately 11 KB uncompressed.
 - Mobile and desktop full-page screenshots were visually inspected.
 - `node --check script.js` and `git diff --check` passed.
 
@@ -40,8 +40,18 @@ were not available in this environment.
 - Quadro Kickstarter URL matches CoPrint's homepage destination and resolves in
   web lookup. Direct automated requests receive Kickstarter's HTTP 403 bot
   protection; normal visitor interaction with Kickstarter could not be automated.
-- No guessed personal Discord URL and no placeholder or broken scheduled-event
-  button. The unconfirmed event remains a text status.
+- Personal Discord profile: the owner supplied
+  `https://discord.com/users/237471776957792257`; no user ID was guessed.
+  The URL returns HTTP 200; Discord may require sign-in to display the profile.
+- Email link is exactly `mailto:mjfsch@hotmail.com`; no email was sent.
+- YouTube returns HTTP 200 with title `mjfsch - YouTube` and canonical handle
+  `/@mjfsch`. TikTok returns HTTP 200 with `uniqueId: mjfsch`, `nickname: mjfsch`
+  and a successful (`0`) profile status code in its page data.
+- Email, YouTube and TikTok appear below the community invite. Social links share
+  one row to keep the page compact. The copy button is a small secondary control
+  with a 44px tap target; the direct Discord profile is the primary contact link.
+- The livestream/event section was removed at the owner's request, including
+  event status and metadata references. No placeholder scheduled-event links.
 
 ## Deployment and QR
 

@@ -36,33 +36,22 @@ Use GitHub's file editor or edit locally and commit to `main`.
   CoPrint homepage's Discord Channel link and was verified on 12 October 2026:
   guild `1144633500922822656`, "Co Print Official", welcome channel, no expiry.
   Check a replacement opens the correct community before publishing.
-- No personal Discord ID/profile URL has been assumed. If a verified profile URL
-  becomes available, add a normal link beside the copy button.
-- CoPrint, Quadro Kickstarter and GitHub URLs: edit the matching `href` attributes.
+- Discord profile: change the `href` under the profile URL comment. The current
+  `https://discord.com/users/237471776957792257` was supplied by the page owner.
+  Discord may require the visitor to sign in before showing the profile.
+- Email, YouTube, TikTok, CoPrint, Quadro Kickstarter and GitHub destinations:
+  edit the matching `href` attributes. Email uses `mailto:mjfsch@hotmail.com`;
+  the social profiles use the owner's `@mjfsch` username.
   The Kickstarter destination was taken from CoPrint's own homepage.
 - Colours, spacing and type: edit `style.css`. The favicon is an original abstract
   layer illustration, not an official brand logo.
 
-## Add the live event, or update after Formnext
+## Update after Formnext
 
-Find the `EVENT` comment and `section id="event"` in `index.html`.
-Edit the heading and description, adding the confirmed date/time and timezone.
-Replace the entire `p class="event-status"` paragraph with a normal link:
-
-```html
-<a class="event-link" href="PASTE_THE_VERIFIED_DISCORD_SCHEDULED_EVENT_URL">
-  View the Discord event <span aria-hidden="true">&#8599;</span>
-</a>
-```
-
-The example above is documentation only. Replace its URL with the actual HTTPS
-Scheduled Event link before adding it to the page. No placeholder event link is
-shipped. Leave "Details coming soon" until the event is confirmed.
-
-After Formnext, replace this section with a replay/community update or delete
-the whole section. Change "Hello from Formnext 2026!" in the introduction to
-"Hello, fellow maker!", and refresh the description metadata. Discord and the
-permanent sleeve QR stay useful without rebuilding anything.
+The livestream/event section was removed at the owner's request. To make the
+introduction evergreen after Formnext, change "Hello from Formnext 2026!" to
+"Hello, fellow maker!", and refresh the description metadata. Discord, the
+community links and the permanent sleeve QR stay useful without rebuilding.
 
 ## QR artwork and print guidance
 
