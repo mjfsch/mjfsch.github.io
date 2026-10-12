@@ -17,9 +17,9 @@ button.addEventListener("click", async () => {
       throw new Error("Clipboard unavailable");
     }
     await navigator.clipboard.writeText(value);
-    label.textContent = "Copied!";
+    label.textContent = "Copied";
     status.textContent = `${value} copied. Paste it into Discord's Add Friend field.`;
-    resetTimer = setTimeout(() => { label.textContent = "Copy username"; }, 4000);
+    resetTimer = setTimeout(() => { label.textContent = "Copy"; }, 4000);
   } catch {
     // Leave a selectable username and useful instructions when permission fails.
     const selection = window.getSelection();
@@ -27,7 +27,7 @@ button.addEventListener("click", async () => {
     range.selectNodeContents(username);
     selection.removeAllRanges();
     selection.addRange(range);
-    label.textContent = "Copy username";
+    label.textContent = "Copy";
     status.textContent = `Copy wasn't available. Select ${value} above, or type it into Discord's Add Friend field.`;
   }
 });
