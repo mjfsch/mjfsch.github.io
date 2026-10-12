@@ -39,9 +39,9 @@ Use GitHub's file editor or edit locally and commit to `main`.
 - Discord profile: change the `href` under the profile URL comment. The current
   `https://discord.com/users/237471776957792257` was supplied by the page owner.
   Discord may require the visitor to sign in before showing the profile.
-- Email, YouTube, TikTok, CoPrint, Quadro Kickstarter and GitHub destinations:
-  edit the matching `href` attributes. Email uses `mailto:mjfsch@hotmail.com`;
-  the social profiles use the owner's `@mjfsch` username.
+- YouTube, TikTok, CoPrint, Quadro Kickstarter and GitHub destinations:
+  edit the matching `href` attributes. The social profiles use the owner's
+  `@mjfsch` username.
   The Kickstarter destination was taken from CoPrint's own homepage.
 - Colours, spacing and type: edit `style.css`. The favicon is an original abstract
   layer illustration, not an official brand logo.
