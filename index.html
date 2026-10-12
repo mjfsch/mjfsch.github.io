@@ -24,7 +24,15 @@
       </div>
       <h1>CoPrint Community<br>Ambassador</h1>
       <!-- Username is the single source used by the copy button. Keep the @. -->
-      <p class="handle" id="discord-username">@mjfsch</p>
+      <div class="handle-row">
+        <p class="handle" id="discord-username">@mjfsch</p>
+        <!-- Compact appearance with a 44px mobile touch target. -->
+        <button id="copy-username" type="button" aria-label="Copy Discord username" hidden>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M16 5V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h1" stroke="currentColor" stroke-width="1.6"/></svg>
+          <span id="copy-label" aria-hidden="true">Copy</span>
+        </button>
+      </div>
+      <p class="copy-status" id="copy-status" role="status" aria-live="polite" aria-atomic="true"></p>
       <p class="hello">Hello from Formnext 2026! Let's talk 3D printing, swap ideas and stay connected in the CoPrint community.</p>
       <p class="role-note">I help out with the CoPrint community as a volunteer — come say hello!</p>
     </header>
@@ -33,21 +41,16 @@
       <section class="contact panel" aria-labelledby="contact-title">
         <!-- Profile URL supplied and confirmed by the page owner. -->
         <a class="panel-heading profile-link" href="https://discord.com/users/237471776957792257">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-8 8H5l-3 2v-10a9 9 0 0 1 18 0Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7 11h.01M12 11h.01M17 11h.01" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+          <svg class="brand-icon discord-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="icons.svg#discord"></use></svg>
           <div class="link-text"><h2 id="contact-title">Find me on Discord</h2><span class="link-detail">Open my Discord profile</span></div>
           <span class="arrow" aria-hidden="true">&#8599;</span>
         </a>
-        <!-- Hidden until JS is ready, so a blocked script leaves no dead button. -->
-        <button id="copy-username" type="button" hidden>
-          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M16 5V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-          <span id="copy-label">Copy username</span>
-        </button>
-        <p class="copy-status" id="copy-status" role="status" aria-live="polite" aria-atomic="true"></p>
         <noscript><p class="manual-note">Search for <strong>mjfsch</strong> in Discord to add me.</p></noscript>
       </section>
 
       <!-- COMMUNITY INVITE: replace this href when the invite changes. -->
       <a class="community panel link-panel" href="https://discord.gg/rPAMgVsdjP">
+        <svg class="brand-icon discord-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="icons.svg#discord"></use></svg>
         <span class="link-text"><span class="link-title">Join the CoPrint Community</span><span class="link-detail">Meet makers. Share prints. Get involved.</span></span>
         <span class="arrow" aria-hidden="true">&#8599;</span>
       </a>
@@ -56,16 +59,16 @@
 
     <nav class="more-links" aria-label="Social profiles and useful links">
       <div class="social-links">
-        <a href="https://www.youtube.com/@mjfsch"><span>YouTube</span><span aria-hidden="true">&#8599;</span></a>
-        <a href="https://www.tiktok.com/@mjfsch"><span>TikTok</span><span aria-hidden="true">&#8599;</span></a>
+        <a href="https://www.youtube.com/@mjfsch"><span class="link-main"><svg class="brand-icon youtube-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="icons.svg#youtube"></use></svg><span>YouTube</span></span><span class="arrow-small" aria-hidden="true">&#8599;</span></a>
+        <a href="https://www.tiktok.com/@mjfsch"><span class="link-main"><svg class="brand-icon tiktok-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="icons.svg#tiktok"></use></svg><span>TikTok</span></span><span class="arrow-small" aria-hidden="true">&#8599;</span></a>
       </div>
-      <a href="https://www.kickstarter.com/projects/coprint3d/co-print-quadro-independent-4-toolhead-color-3d-printer"><span>Quadro on Kickstarter</span><span aria-hidden="true">&#8599;</span></a>
-      <a href="https://coprint3d.com/"><span>CoPrint website</span><span aria-hidden="true">&#8599;</span></a>
+      <a href="https://www.kickstarter.com/projects/coprint3d/co-print-quadro-independent-4-toolhead-color-3d-printer"><span class="link-main"><svg class="brand-icon kickstarter-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="icons.svg#kickstarter"></use></svg><span>Quadro on Kickstarter</span></span><span class="arrow-small" aria-hidden="true">&#8599;</span></a>
+      <a href="https://coprint3d.com/"><span class="link-main"><svg class="brand-icon coprint-icon" viewBox="0 0 44 44" aria-hidden="true" focusable="false"><use href="icons.svg#coprint"></use></svg><span>CoPrint website</span></span><span class="arrow-small" aria-hidden="true">&#8599;</span></a>
     </nav>
 
     <footer>
       <p>With thanks to CoPrint &amp; Quadro.</p>
-      <a href="https://github.com/mjfsch">GitHub <span aria-hidden="true">&#8599;</span></a>
+      <a href="https://github.com/mjfsch"><svg class="brand-icon github-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="icons.svg#github"></use></svg><span>GitHub</span><span aria-hidden="true">&#8599;</span></a>
     </footer>
   </main>
 </body>
