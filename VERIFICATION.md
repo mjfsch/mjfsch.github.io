@@ -95,4 +95,8 @@ were not available in this environment.
   colours. Visually inspected mobile and desktop screenshots. Keyboard activation,
   clipboard copying and 200% text enlargement also passed with no failed assets
   or JavaScript errors.
-- All six runtime assets remain local and total about 28 KB uncompressed.
+- All seven runtime assets remain local and total about 32 KB uncompressed.
+- Added CoPrint's original colour favicon as a 14px mark beside the website
+  link. Matched the Discord links' icon/text gap at 10px. Browser checks at
+  280, 320, 390, 768 and 1440px confirm both labels have exactly the same left
+  position, the new mark loads correctly, and all accessibility checks still pass.

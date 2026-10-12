@@ -54,6 +54,9 @@ Use GitHub's file editor or edit locally and commit to `main`.
   `coprint-logo.webp` is CoPrint's original colour wordmark from its homepage,
   displayed at 96px wide and hosted locally. Source:
   https://coprint3d.com/cdn/shop/files/cologwebp.webp?v=1738592849
+  The website link uses the 14px colour mark in `coprint-mark.png`, sourced from
+  CoPrint's own `apple-touch-icon.png` favicon. Both Discord links use the same
+  16px icon and 10px text gap to keep their labels aligned.
 
 ## Update after Formnext
 
