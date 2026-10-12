@@ -62,7 +62,8 @@ Use GitHub's file editor or edit locally and commit to `main`.
 
 The livestream/event section was removed at the owner's request. To make the
 introduction evergreen after Formnext, change "Hello from Formnext 2026!" to
-"Hello, fellow maker!", and refresh the description metadata. Discord, the
+"Hello, fellow maker!", remove the stand-visit paragraph and related CSS, and
+refresh the description metadata. Discord, the
 community links and the permanent sleeve QR stay useful without rebuilding.
 
 ## QR artwork and print guidance
