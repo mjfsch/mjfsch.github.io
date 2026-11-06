@@ -1,12 +1,12 @@
 :root {
   color-scheme: dark;
-  --background: #0c1012;
-  --surface: #161c1f;
-  --border: #344044;
-  --text: #f2f5f3;
-  --muted: #b4c1c3;
-  --accent: #ffa085;
-  --mint: #a6edcf;
+  --background: #030c1b;
+  --surface: #0b1729;
+  --border: #354b68;
+  --text: #f5f8ff;
+  --muted: #c0ccdc;
+  --accent: #ffb35c;
+  --highlight: #9bd7ff;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 * { box-sizing: border-box; }
@@ -14,10 +14,18 @@
 body {
   margin: 0;
   background: var(--background);
-  background-image: radial-gradient(ellipse at 50% 0%, #203030 0%, transparent 65%);
   color: var(--text);
   line-height: 1.5;
   min-height: 100svh;
+  isolation: isolate;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(#030c1b1a, #030c1b1a), url("assets/mjf-background-mobile.webp") center top / auto calc(100% + 160px) no-repeat;
 }
 button, a { -webkit-tap-highlight-color: transparent; }
 a { color: inherit; text-decoration: none; }
@@ -27,13 +35,15 @@ a:focus-visible, button:focus-visible {
   outline-offset: 5px;
 }
 .card { width: min(100% - 40px, 460px); margin: 0 auto; padding: 24px 0 18px; }
-.coprint-logo { display: block; width: 96px; height: auto; margin-bottom: 16px; }
+.brand-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 14px; }
+.mjf-logo { display: block; width: min(62%, 220px); height: auto; }
+.coprint-logo { display: block; width: 80px; height: auto; flex-shrink: 0; }
 h1 { margin: 0; font-size: clamp(1.7rem, 6.8vw, 2.125rem); font-weight: 650; letter-spacing: -.045em; line-height: 1.13; }
 .handle-row { display: flex; align-items: center; gap: 8px; margin: 8px 0 10px; }
-.handle { margin: 0; color: var(--accent); font-size: 1.3125rem; font-weight: 650; letter-spacing: -.02em; overflow-wrap: anywhere; user-select: all; }
+.handle { margin: 0; color: var(--highlight); font-size: 1.3125rem; font-weight: 650; letter-spacing: -.02em; overflow-wrap: anywhere; user-select: all; }
 .hello { margin: 0 0 8px; color: var(--muted); font-size: .875rem; max-width: 45ch; }
 .stand-visit { margin: 0 0 18px; font-size: .875rem; max-width: 45ch; }
-.stand-visit strong { color: var(--mint); font-weight: 650; }
+.stand-visit strong { color: var(--highlight); font-weight: 650; }
 .actions { display: grid; gap: 10px; }
 .panel { border: 1px solid var(--border); border-radius: 16px; padding: 16px; background: var(--surface); }
 .actions .panel { padding: 10px 14px; }
@@ -46,30 +56,32 @@ h2, .link-title { margin: 0; font-size: .9375rem; font-weight: 650; line-height:
 .panel p { margin: 6px 0 0; color: var(--muted); font-size: .8125rem; }
 #copy-username { display: inline-flex; align-items: center; justify-content: center; gap: 4px; min-height: 44px; padding: 0 6px; border: 0; border-radius: 6px; color: var(--muted); background: transparent; font-size: .6875rem; font-weight: 600; }
 #copy-username .icon { width: 14px; height: 14px; flex: 0 0 14px; }
-.copy-status { margin: 0; color: var(--mint); font-size: .75rem; }
+.copy-status { margin: 0; color: var(--highlight); font-size: .75rem; }
 .copy-status:not(:empty) { margin: -4px 0 10px; }
 .link-panel { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 70px; }
-.community { background: #202a27; border-color: #527063; }
-.quadro { background: #26221f; border-color: #705447; }
+.community { background: #0c2038; border-color: #42668b; }
+.quadro { background: #251b15; border-color: #8f623d; }
 .link-panel .link-title { flex: 1; min-width: 0; }
-.arrow { color: var(--mint); font-size: 1.5rem; }
-.more-links { margin: 12px 0 8px; }
+.arrow { color: var(--highlight); font-size: 1.5rem; }
+.more-links { margin: 12px 0 8px; padding: 0 12px; background: #071225f5; border: 1px solid var(--border); border-radius: 12px; }
+.more-links > a:last-child { border-bottom: 0; }
 .social-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-.more-links a { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px; border-bottom: 1px solid #293236; color: var(--muted); font-size: .8125rem; }
+.more-links a { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px; border-bottom: 1px solid var(--border); color: var(--muted); font-size: .8125rem; }
 .link-main { display: inline-flex; align-items: center; min-width: 0; gap: 9px; }
 .link-main .brand-icon { width: 14px; height: 14px; flex-basis: 14px; }
 .arrow-small { color: var(--accent); flex-shrink: 0; }
 footer { display: flex; align-items: center; justify-content: flex-end; color: var(--muted); font-size: .6875rem; }
-footer a { display: inline-flex; align-items: center; min-height: 44px; gap: 6px; text-decoration: underline; text-underline-offset: 3px; }
+footer a { display: inline-flex; align-items: center; min-height: 44px; gap: 6px; padding: 0 8px; border-radius: 6px; background: var(--background); text-decoration: underline; text-underline-offset: 3px; }
 footer a .brand-icon { width: 12px; height: 12px; flex-basis: 12px; }
 @media (hover: hover) {
-  .community:hover { border-color: var(--mint); background: #27382f; }
-  .quadro:hover { border-color: var(--accent); background: #332923; }
-  #copy-username:hover { background: #24312b; color: var(--text); }
+  .community:hover { border-color: var(--highlight); background: #122c49; }
+  .quadro:hover { border-color: var(--accent); background: #35251a; }
+  #copy-username:hover { background: #162943; color: var(--text); }
   .profile-link:hover h2 { text-decoration: underline; text-underline-offset: 4px; }
   .more-links a:hover, footer a:hover { color: var(--text); }
 }
 @media (min-width: 700px) {
+  body::before { background-image: linear-gradient(#030c1b1a, #030c1b1a), url("assets/mjf-background-wide.webp"); background-position: center, center; background-size: auto, cover; }
   .card { padding-top: 32px; padding-bottom: 24px; }
   h1 { font-size: 2.25rem; }
   .hello { font-size: .9375rem; }
@@ -79,6 +91,7 @@ footer a .brand-icon { width: 12px; height: 12px; flex-basis: 12px; }
   .panel { padding: 14px; }
 }
 @media (forced-colors: active) {
+  body::before { display: none; }
   .panel { border-color: CanvasText; }
   #copy-username { border-color: ButtonText; }
 }

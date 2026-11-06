@@ -1,5 +1,34 @@
 # Verification record
 
+## MJF Workshop branding - 6 November 2026
+
+- Synced the latest `main`, retaining the owner's compact cards, Quadro link,
+  stand invitation, current links and copy control. The landing-page URL and QR
+  artwork are unchanged.
+- Added the supplied MJF Workshop wordmark beside the existing CoPrint logo.
+  The original artwork is resized/encoded for web delivery, without redrawing
+  or generating new branding. Platform logos keep their original colours.
+- Added the supplied portrait/landscape background artwork, a matching blue and
+  orange palette, a badge browser icon, and the supplied landscape artwork for
+  social link previews. Dark surfaces keep secondary links readable over the
+  background. Mobile background framing keeps its duplicate footer mark clear
+  of the links.
+- Seven Chromium viewport checks passed: 280, 320, 360, 390, 430, 768 and 1440px.
+  No horizontal overflow; all eight original anchor destinations retained; all
+  controls at least 44px high; Discord labels remain aligned; both logos load
+  with bounded widths. Mobile and desktop screenshots were inspected.
+- axe-core 4.10.3 WCAG A/AA, WCAG 2.1 AA and best-practice checks reported zero
+  violations. Keyboard focus/activation, clipboard success and unavailable-API
+  fallback, 200% text enlargement, forced-colour mode and JavaScript-disabled
+  content passed. No failed assets, JavaScript errors, cookies or third-party
+  runtime requests were observed.
+- Cold-page local assets total about 185 KB on mobile / 177 KB on desktop before
+  HTTP compression. The larger shared-link artwork is metadata for crawlers,
+  not an extra image downloaded by the page. No framework/build/runtime dependency
+  was added. `node --check script.js` and `git diff --check` passed.
+
+The earlier records below describe their respective previous revisions.
+
 Date: 12 October 2026. The existing public `mjfsch.github.io` repository was
 verified empty via GitHub's Contents API before cloning; the previous root URL
 returned 404 and Pages was not configured. No existing files were overwritten.

@@ -1,4 +1,4 @@
-# @mjfsch - CoPrint Community Ambassador
+# MJF Workshop - @mjfsch
 
 A small personal digital business card for a volunteer attending Formnext 2026.
 Plain HTML/CSS and one clipboard enhancement. No build step, runtime packages,
@@ -43,8 +43,8 @@ Use GitHub's file editor or edit locally and commit to `main`.
   edit the matching `href` attributes. The social profiles use the owner's
   `@mjfsch` username.
   The Kickstarter destination was taken from CoPrint's own homepage.
-- Colours, spacing and type: edit `style.css`. The favicon is an original abstract
-  layer illustration, not an official brand logo.
+- Colours, spacing and type: edit `style.css`. The blue/orange palette follows
+  the owner's MJF Workshop artwork.
 - Logos: `icons.svg` stores platform vectors with explicit brand colours. CSS
   sets their sizes (16px for Discord, 14px for social links, 12px for GitHub).
   Keep those fills intact instead of applying a shared `currentColor` override.
@@ -52,11 +52,30 @@ Use GitHub's file editor or edit locally and commit to `main`.
   https://github.com/gilbarbara/logos/blob/main/logos/tiktok-icon.svg, using a white
   centre on the dark background. The other platform paths come from Simple Icons.
   `coprint-logo.webp` is CoPrint's original colour wordmark from its homepage,
-  displayed at 96px wide and hosted locally. Source:
+  displayed at 80px wide beside the MJF Workshop wordmark and hosted locally. Source:
   https://coprint3d.com/cdn/shop/files/cologwebp.webp?v=1738592849
   The website link uses the 14px colour mark in `coprint-mark.png`, sourced from
   CoPrint's own `apple-touch-icon.png` favicon. Both Discord links use the same
   16px icon and 10px text gap to keep their labels aligned.
+
+## MJF Workshop branding
+
+`assets/` contains web-sized copies of the owner's supplied artwork, without
+redrawing or regenerating the branding:
+
+- `mjf-workshop-logo.webp`: transparent wordmark, displayed up to 220px wide.
+- `mjf-background-mobile.webp` and `mjf-background-wide.webp`: portrait and
+  landscape backgrounds, selected by the existing 700px CSS breakpoint.
+- `mjf-workshop-icon.png`: square badge artwork resized for the browser icon.
+- `mjf-workshop-social.webp`: landscape artwork for shared-link previews.
+
+To replace branding, update these files and keep their aspect ratios; update
+the image dimensions in `index.html` if dimensions change. The original logo is
+2400x1242, the backgrounds are 720x1280 and 1280x720, the square badge is 1280x1280,
+and the shared-link artwork is 1280x720. Assets use WebP compression and a PNG
+browser icon; there are no external image requests or runtime image processors.
+Keep the small CoPrint wordmark and original colours of the platform icons.
+The pale blue and orange accents remain separate from the platform brand colours.
 
 ## Update after Formnext
 
