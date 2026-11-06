@@ -22,7 +22,10 @@ body {
 body::before {
   content: "";
   position: fixed;
-  inset: 0;
+  inset: 0 0 auto;
+  /* Browser toolbar changes must not resize the artwork during scrolling. */
+  height: 100vh;
+  height: 100lvh;
   z-index: -1;
   pointer-events: none;
   background: linear-gradient(#030c1b1a, #030c1b1a), url("assets/mjf-background-mobile.webp") center top / auto calc(100% + 160px) no-repeat;

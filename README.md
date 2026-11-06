@@ -77,6 +77,13 @@ browser icon; there are no external image requests or runtime image processors.
 Keep the small CoPrint wordmark and original colours of the platform icons.
 The pale blue and orange accents remain separate from the platform brand colours.
 
+The fixed background layer uses `100lvh` (with a `100vh` fallback) so mobile
+browser toolbar changes do not resize the artwork while scrolling. Keep its
+bottom edge unpinned; replacing this explicit height with an `inset: 0` stretch
+or dynamic viewport sizing can bring back the rescaling. Actual window and
+orientation changes still reframe the artwork.
+See [viewport unit behaviour](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/length#relative_length_units_based_on_viewport).
+
 ## Update after Formnext
 
 The livestream/event section was removed at the owner's request. To make the

@@ -1,5 +1,17 @@
 # Verification record
 
+## Mobile background scrolling - 6 November 2026
+
+- Replaced the viewport-stretched background layer with an explicit stable
+  `100lvh` height (`100vh` fallback), keeping the top edge fixed. Mobile browser
+  toolbar expansion/retraction no longer determines the artwork's scale.
+- Chromium screenshots confirmed identical background pixels and layer geometry
+  at five scroll offsets, in both directions, at 390x700, 320x568, 844x390 and
+  1440x900. Orientation changes still reframe and choose the correct image.
+- No JavaScript, artwork or content changes. The mobile browser address-bar
+  animation itself is not reproduced by the headless browser; this check covers
+  scrolling and orientation, with viewport unit behaviour documented in README.
+
 ## MJF Workshop branding - 6 November 2026
 
 - Synced the latest `main`, retaining the owner's compact cards, Quadro link,
