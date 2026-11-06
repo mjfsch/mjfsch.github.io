@@ -1,5 +1,31 @@
 # Verification record
 
+## Revised toolbar fix, larger CoPrint logo and YouTube - 6 November 2026
+
+- The owner's Android screenshots showed the earlier `100lvh` change did not
+  resolve the toolbar transition. The original ordinary-scroll checks did not
+  exercise a changing viewport height.
+- Touch artwork now uses width-only image sizing and top alignment; it has no
+  height-based scale, `cover` or vertical centring. The touch image breakpoint
+  also depends only on width, avoiding near-square viewport orientation flips.
+  Desktop mouse layouts keep normal `cover` behaviour.
+- New tests vary height at fixed widths, including near-square cases: 360px
+  (650/740/620), 390px (700/844/680), 640px (620/740/600), 844px (390/480/360),
+  and 768px (690/850/670). Artwork framing stayed constant across all height
+  changes and scroll offsets; screenshot margins matched within one 8-bit
+  channel level of compositor edge rounding. No physical address-bar UI is
+  available in headless Chromium; these tests explicitly exercise its changing
+  visible-height effect, unlike the previous tests.
+- CoPrint wordmark enlarged from 80px to a responsive 104-132px, with no overlap
+  or horizontal overflow at 280, 320, 360, 390, 768 and 1440px. Touch targets,
+  aligned Discord labels and axe accessibility checks passed at those widths.
+- YouTube's old handle resolves to the channel titled `MJF Workshop`. Verified
+  its permanent channel URL returns HTTP 200 with the same external channel ID:
+  `https://www.youtube.com/channel/UCo7reaw3MsH6Luk4axfOrSw`. The page now links
+  to this stable channel ID instead of relying on a handle.
+- Added a stylesheet revision query to avoid retaining an older cached CSS
+  file when the HTML is updated. The landing-page/QR URL is unchanged.
+
 ## Mobile background scrolling - 6 November 2026
 
 - Replaced the viewport-stretched background layer with an explicit stable

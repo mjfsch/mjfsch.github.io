@@ -40,8 +40,9 @@ Use GitHub's file editor or edit locally and commit to `main`.
   `https://discord.com/users/237471776957792257` was supplied by the page owner.
   Discord may require the visitor to sign in before showing the profile.
 - YouTube, TikTok, CoPrint, Quadro Kickstarter and GitHub destinations:
-  edit the matching `href` attributes. The social profiles use the owner's
-  `@mjfsch` username.
+  edit the matching `href` attributes. TikTok uses the owner's `@mjfsch` username.
+  YouTube uses the permanent channel ID `UCo7reaw3MsH6Luk4axfOrSw`, verified as
+  MJF Workshop, so changing the display name/handle does not affect this link.
   The Kickstarter destination was taken from CoPrint's own homepage.
 - Colours, spacing and type: edit `style.css`. The blue/orange palette follows
   the owner's MJF Workshop artwork.
@@ -52,7 +53,7 @@ Use GitHub's file editor or edit locally and commit to `main`.
   https://github.com/gilbarbara/logos/blob/main/logos/tiktok-icon.svg, using a white
   centre on the dark background. The other platform paths come from Simple Icons.
   `coprint-logo.webp` is CoPrint's original colour wordmark from its homepage,
-  displayed at 80px wide beside the MJF Workshop wordmark and hosted locally. Source:
+  displayed at 104-132px wide beside the MJF Workshop wordmark and hosted locally. Source:
   https://coprint3d.com/cdn/shop/files/cologwebp.webp?v=1738592849
   The website link uses the 14px colour mark in `coprint-mark.png`, sourced from
   CoPrint's own `apple-touch-icon.png` favicon. Both Discord links use the same
@@ -77,12 +78,16 @@ browser icon; there are no external image requests or runtime image processors.
 Keep the small CoPrint wordmark and original colours of the platform icons.
 The pale blue and orange accents remain separate from the platform brand colours.
 
-The fixed background layer uses `100lvh` (with a `100vh` fallback) so mobile
-browser toolbar changes do not resize the artwork while scrolling. Keep its
-bottom edge unpinned; replacing this explicit height with an `inset: 0` stretch
-or dynamic viewport sizing can bring back the rescaling. Actual window and
-orientation changes still reframe the artwork.
-See [viewport unit behaviour](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/length#relative_length_units_based_on_viewport).
+On touch devices, the fixed artwork is sized from viewport **width only**, with
+a fixed minimum image width and top alignment. Toolbar/visible-height changes
+cannot affect its scale or vertical position. Touch screens below 700px use the
+portrait artwork; wider touch screens use the wide artwork. Desktop mouse
+layouts retain `cover` sizing. Do not reintroduce height-relative sizing, `cover`
+or vertical centring for touch backgrounds. The previous `100lvh` attempt did
+not resolve the issue on the owner's phone.
+
+The stylesheet URL in `index.html` includes a revision query. Bump it for future
+visual changes so a mobile browser does not retain stale CSS during deployment.
 
 ## Update after Formnext
 

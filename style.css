@@ -22,13 +22,11 @@ body {
 body::before {
   content: "";
   position: fixed;
-  inset: 0 0 auto;
-  /* Browser toolbar changes must not resize the artwork during scrolling. */
-  height: 100vh;
-  height: 100lvh;
+  inset: 0;
   z-index: -1;
   pointer-events: none;
-  background: linear-gradient(#030c1b1a, #030c1b1a), url("assets/mjf-background-mobile.webp") center top / auto calc(100% + 160px) no-repeat;
+  /* Image scale depends on width only, never on the changing toolbar height. */
+  background: linear-gradient(#030c1b1a, #030c1b1a), url("assets/mjf-background-mobile.webp") center top / max(100vw, 600px) auto no-repeat;
 }
 button, a { -webkit-tap-highlight-color: transparent; }
 a { color: inherit; text-decoration: none; }
@@ -39,8 +37,8 @@ a:focus-visible, button:focus-visible {
 }
 .card { width: min(100% - 40px, 460px); margin: 0 auto; padding: 24px 0 18px; }
 .brand-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 14px; }
-.mjf-logo { display: block; width: min(62%, 220px); height: auto; }
-.coprint-logo { display: block; width: 80px; height: auto; flex-shrink: 0; }
+.mjf-logo { display: block; width: min(62%, 220px); min-width: 0; height: auto; }
+.coprint-logo { display: block; width: clamp(104px, 33vw, 132px); height: auto; flex-shrink: 0; }
 h1 { margin: 0; font-size: clamp(1.7rem, 6.8vw, 2.125rem); font-weight: 650; letter-spacing: -.045em; line-height: 1.13; }
 .handle-row { display: flex; align-items: center; gap: 8px; margin: 8px 0 10px; }
 .handle { margin: 0; color: var(--highlight); font-size: 1.3125rem; font-weight: 650; letter-spacing: -.02em; overflow-wrap: anywhere; user-select: all; }
@@ -92,6 +90,12 @@ footer a .brand-icon { width: 12px; height: 12px; flex-basis: 12px; }
 @media (max-width: 340px) {
   .card { width: calc(100% - 28px); padding-top: 18px; }
   .panel { padding: 14px; }
+}
+@media (hover: none) and (pointer: coarse) {
+  body::before { background-image: linear-gradient(#030c1b1a, #030c1b1a), url("assets/mjf-background-mobile.webp"); background-position: center top; background-size: auto, max(100vw, 600px) auto; }
+}
+@media (hover: none) and (pointer: coarse) and (min-width: 700px) {
+  body::before { background-image: linear-gradient(#030c1b1a, #030c1b1a), url("assets/mjf-background-wide.webp"); background-size: auto, max(100vw, 1920px) auto; }
 }
 @media (forced-colors: active) {
   body::before { display: none; }
